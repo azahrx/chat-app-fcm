@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1085853883318",
+    "firebase_url": "https://chatapp-454f5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "chatapp-454f5",
+    "storage_bucket": "chatapp-454f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085853883318:android:7f5567a0de832de49dbf17",
+        "android_client_info": {
+          "package_name": "com.zahra.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085853883318-r8vtpgf5pf460a74n45979r8hsc8hsbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoXzG510SCICLhrZfdksWOQckRp98H0L0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085853883318-r8vtpgf5pf460a74n45979r8hsc8hsbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
