@@ -23,20 +23,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        FirebaseService.sharedPref = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
+
+        val etToken = findViewById<EditText>(R.id.etToken)
+        FirebaseMessaging.getInstance().token.addOnSuccessListener {
+            FirebaseService.token = it
+            etToken.setText(it)
+        }
+
         FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
 
         val btnSend = findViewById<Button>(R.id.btnSend)
         val etTitle = findViewById<EditText>(R.id.etTitle)
         val etMessage = findViewById<EditText>(R.id.etMessage)
-//        val etToken = findViewById<EditText>(R.id.etToken)
 
         btnSend.setOnClickListener {
             val title = etTitle.text.toString()
             val message = etMessage.text.toString()
-            if (title.isNotEmpty() && message.isNotEmpty()) {
+            val recipientToken = etToken.text.toString()
+            if (title.isNotEmpty() && message.isNotEmpty() && recipientToken.isNotEmpty()) {
                 PushNotification(
                     NotificationData(title, message),
-                    TOPIC
+                    recipientToken
                 ).also {
                     sendNotification(it)
                 }
