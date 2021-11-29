@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         FirebaseService.sharedPref = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
 
+        // dbYBben_RR6VKGDZJwtcfg:APA91bGO94fvK6gw7CWb2swzd8pv1wHwBBAJBC7D-dQvkmqXEt_JzpGjntJAFyH5Iu50_0fIBV0mdjsNCf2qjc5YDPAyFWijg7mXSE_WfNaKT9fjeJ9VPxDVmntlU4xUzJfvLiYDL2_E
         val etToken = findViewById<EditText>(R.id.etToken)
         FirebaseMessaging.getInstance().token.addOnSuccessListener {
             FirebaseService.token = it
