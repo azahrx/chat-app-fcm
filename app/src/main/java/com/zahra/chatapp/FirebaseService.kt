@@ -12,6 +12,7 @@ import android.graphics.Color
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import kotlin.random.Random
@@ -60,6 +61,9 @@ class FirebaseService : FirebaseMessagingService() {
             .build()
 
         notificationManager.notify(notificationID, notification)
+
+        intent.putExtra("message", message.data["message"])
+        LocalBroadcastManager.getInstance(this@FirebaseService).sendBroadcast(intent)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
